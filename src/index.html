@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
   <link rel="stylesheet" href="./styles/style.css">
   <meta name="description" content="Front End Web Developer Portfolio">
@@ -23,15 +24,26 @@
       
     </div>
     <div id="terminalWindow">
+      <!-- begin title bar -->
       <div class="titleBar">
-        <p class="title-text">
-          trevorKirpaul@myPortolio
-        </p>
-        <i id="closeButton" class="fa fa-times-circle" aria-hidden="true"></i>
-        <!-- <p class="title-close-button" id="closeButton">&#10005</p> -->
+        <div class="title-left">
+            <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        </div>
+        <div class="title-text-wrap">
+          <p class="title-text">
+            trevorKirpaul@myPortolio        
+          </p>
+        </div>
+            
+        <div class="title-actions">
+          <button class="titlebarButton" id="minButton"></button>
+          <button class="titlebarButton" id="maxButton"></button>
+          <button class="titlebarButton" id="closeButton"></button>
+        </div>
+          
       </div>
-  
-      <div class="panel">
+      <!-- begin terminal windwow panel -->
+      <div class="panel" id="terminalPanel">
   
         <p class="console-text">$ cd trevorKirpaul/</p>
   
@@ -44,22 +56,24 @@
         <p class="console-text">$ cd projects/ && ls</p>
   
         <p class="console-return">
-          <a class="link" href="https:/trevorkirpaul.com/build" target="blank">eCommerce-React-Redux-Project</a>
+          <a class="link" href="https://trevorkirpaul.com/build" target="blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> eCommerce-React-Redux-Project</a>
         </p>
   
         <p class="console-text"> $ cd .. && cat contact.txt</p>
   
         <p class="console-return">
           <a class="link" href="https://github.com/trevorkirpaul" target="_blank">
-            github
+            <i class="fa fa-github" aria-hidden="true"></i> github
           </a>,
           <a class="link" href="https://twitter.com/trevorkirpaul" target="_blank">
-            twitter
+            <i class="fa fa-twitter-square" aria-hidden="true"></i> twitter
           </a>,
-          <a class="link" href="mailto:trevorKirpaul@gmail.com?Subject=Hello%from%your%portfolio" target="_top">
-            email
+          <a class="link" href="mailto:trevorKirpaul@gmail.com?Subject=Hello" target="_top">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i> email
           </a>
         </p>
+        <p class="console-input" id="console-input">$ <input placeholder="_" type="text" id="bashInp"></p>
+        
         
       </div>
       <div class="endMessage">

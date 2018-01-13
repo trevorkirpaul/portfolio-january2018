@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   color: #383838;
   background: #272727;
 }
@@ -32,6 +32,7 @@ body {
 
 #terminalWindow {
   width: 450px;
+  
 }
 @media(max-width: 450px) {
   #terminalWindow {
@@ -39,7 +40,10 @@ body {
     
   }
 }
-
+/*
+message displayed when terminalWindow is closed
+using our created close button
+*/
 .error-message {
   display: none;
   color: #f8f8f8;
@@ -52,6 +56,12 @@ body {
 #face {
   margin-bottom: 5px;
 }
+
+
+
+/* 
+  TITLEBAR --CONSOLE WINDOW
+*/
 .titleBar {
   background: #e8e8e8;
   height: 28px;
@@ -63,34 +73,84 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.title-left {
+  flex: 1;
+  text-align: left;
+}
+@media(max-width: 450px) {
+  .title-left {
+    display: none;
+    flex: 0;
+  }
+  .title-actions {
+    display: none;
+    flex: 0;
+  }
+  .title-text-wrap {
+    right: 0;  
+  }
+}
+.title-text-wrap {
+  flex: 3;
+  text-align: center;
+  position: relative;
+  right: 10px;
+}
+.title-actions {
+  flex: 1;
+  text-align: right;
+}
+.titlebarButton {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 60%;
 
-
-
-.title-text {
-  flex: 2;
 }
 
-#closeButton {
-  position: relative;
-  top: 1px;
-  color: #383838;
+
+/* 
+  Titlebar buttons styling
+*/
+@media(max-width: 450px) {
+ #minButton {
+  display: none;
+ }   
+ #maxButton {
+   display: none;
+ }
+}
+
+#minButton {
+  background: #EFB351;
+  border: 1px solid #EFB351; 
+}
+#minButton:hover {
+  background: #F3C780;
+  border-color: #F3C780;
+  cursor: pointer;
+}
+#maxButton {  
+  border: 1px solid #8BB174;
+  background: #8BB174;  
+}
+#maxButton:hover {
+  border-color:#BFD4B3;
+  background:#BFD4B3;
+  cursor: pointer;
+}
+#closeButton {  
+  border: 1px solid palevioletred;
+  background: palevioletred;  
 }
 #closeButton:hover {
-  color: palevioletred;
+  background: #FE5F55;
   cursor: pointer;
 }
 
-/* .title-close-button {
-  display: inline-block;
-  color: #383838;
-  position: relative;
-  top: 1px;
-}
-.title-close-button:hover {
-  color: palevioletred;
-  cursor: pointer;
-  user-select: none;
-} */
+/* 
+  CONSOLE TERMINAL WINDOW
+*/
 .panel {
   margin: 0;
   width: 100%;
@@ -119,3 +179,18 @@ body {
   position: relative;
 }
 
+/* 
+  terminal input
+*/
+
+#bashInp {
+  background: none;
+  border: none;
+  color: #f8f8f8;
+  font-family: 'Roboto Mono', monospace;
+}
+@media(max-width: 450px) {
+  #console-input {
+    display: none;
+  }
+}
